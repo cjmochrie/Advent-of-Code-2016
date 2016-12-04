@@ -5,6 +5,7 @@ import Dict
 
 import Sleigh
 import Day2
+import Day3
 
 
 main =
@@ -18,6 +19,7 @@ problemList =
   , ("Day 1 Part 2", Sleigh.runVisitTwice)
   , ("Day 2 Part 1", Day2.solve)
   , ("Day 2 Part 2", Day2.solve2)
+  , ("Day 3 Part 1", Day3.solve)
   ]
 
 
@@ -84,7 +86,6 @@ update msg { problems } =
 view : Model -> Html Msg
 view model =
   div [] (List.map renderProblem <| Dict.values model.problems)
-
 
 
 renderProblem : ProblemData -> Html Msg
