@@ -19,6 +19,7 @@ decrypt room =
 
 aCode = Char.toCode 'a'
 
+
 rotate : Int -> Char -> Char
 rotate num char =
   if char == '-' then
@@ -100,6 +101,7 @@ solve input =
   |> List.filter validate
   |> List.foldr (\room accum -> room.id + accum) 0
   |> toString
+
 
 solve2 : String -> String
 solve2 input =
