@@ -7,7 +7,8 @@ import Sleigh
 import Day2
 import Day3
 import Day4
-import Day5
+import Day6
+
 
 main =
   Html.beginnerProgram { model = model, view = view, update = update }
@@ -24,7 +25,8 @@ problemList =
   , ("Day 3 Part 2", Day3.solve2)
   , ("Day 4 Part 1", Day4.solve)
   , ("Day 4 Part 2", Day4.solve2)
-  , ("Day 5 Part 1", Day5.solve)
+  , ("Day 6 Part 1", Day6.solve)
+  , ("Day 6 Part 2", Day6.solve2)
   ]
 
 
