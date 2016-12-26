@@ -13,6 +13,7 @@ import Day8
 import Day9
 import Day10
 import Day12
+import Day13
 
 
 main =
@@ -40,6 +41,7 @@ problemList =
   , ("Day 10 Part 1", Day10.solve)
   , ("Day 12 Part 1", Day12.solve)
   , ("Day 12 Part 2", Day12.solve2)
+  , ("Day 13 Part 1", Day13.solve)
   ]
 
 
