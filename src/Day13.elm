@@ -1,4 +1,4 @@
-module Day13 exposing (solve)
+module Day13 exposing (solve, solve2)
 
 import Set
 
@@ -49,11 +49,38 @@ search edgeFunc goal current visited steps =
       search edgeFunc goal (Set.diff nextSearch nextVisited) nextVisited (steps + 1)
 
 
+countStops : (Point -> List Point) -> Int -> Set.Set Point -> Set.Set Point -> Int -> Int
+countStops edgeFunc maxSteps current visited steps =
+  let
+    nextVisited =
+      Set.union current visited
+    nextSearch =
+      Set.toList current
+      |> List.map edgeFunc
+      |> List.concat
+      |> Set.fromList
+  in
+    if steps == maxSteps then
+      Set.size nextVisited
+    else
+      countStops edgeFunc maxSteps (Set.diff nextSearch nextVisited) nextVisited (steps + 1)
+
+
 solve : String -> String
 solve input =
   case String.toInt input of
     Ok number ->
       search (edges <| isOpen number) (31, 39) (Set.singleton (1, 1)) Set.empty 0
+      |> toString
+    Err msg ->
+      msg
+
+
+solve2 : String -> String
+solve2 input =
+  case String.toInt input of
+    Ok number ->
+      countStops (edges <| isOpen number) 50 (Set.singleton (1, 1)) Set.empty 0
       |> toString
     Err msg ->
       msg

@@ -42,6 +42,7 @@ problemList =
   , ("Day 12 Part 1", Day12.solve)
   , ("Day 12 Part 2", Day12.solve2)
   , ("Day 13 Part 1", Day13.solve)
+  , ("Day 13 Part 2", Day13.solve2)
   ]
 
 
